@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父元素、子元素的查找</title>
+    <style type="text/css">
+    /*.body{*/
+    /*   margin:0px;*/
+    /*}*/
+    /*.btn-div{*/
+    /*    height:20px;*/
+    /*    margin: auto;*/
+    /*}*/
+    .container-div{
+        margin:12px 0px ;
+        width:300px;
+        height: 200px;
+        border:1px solid red;
+    }
+    .ClickBtn:hover{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body id="body">
+<div class="btn-div">
+    <button class="ClickBtn" onclick="addDomChild()">通过appendChild添加</button>
+    <button class="ClickBtn" onclick="addDomHTML()">通过innerHTML添加</button>
+</div>
+    <div class="container-div" id="container1"></div>
+    <div class="container-div" id="container2"></div>
+
+
+</body>
+<script>
+    function addDomChild() {
+        var container=document.getElementById("container1");
+        var input=document.createElement("input");
+        input.id="btn";
+        input.type="button";
+        input.value="按钮";
+        container.appendChild(input);
+    }
+    function addDomHTML(){
+        var container=document.getElementById("container2");
+        container.innerHTML="<input id='btn' type='button' value='按钮'>";
+        // container.appendChild(input);
+    }
+</script>
+</html>
